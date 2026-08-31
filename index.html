@@ -174,7 +174,7 @@
   .bg-section > .container { position: relative; z-index: 1; }
 
   /* hero на фоне виноградника */
-  .hero { background-image: url('img/winery/vineyard1.jpg'); padding: 110px 0 90px; }
+  .hero { background-image: url('img/hero-vineyard.jpg'); padding: 110px 0 90px; }
   .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(25,19,16,.55) 0%, rgba(25,19,16,.45) 50%, rgba(25,19,16,.72) 100%); }
   .hero .container { position: relative; z-index: 1; }
   .hero .kicker { color: var(--gold-light); }
@@ -202,10 +202,24 @@
   .producer-banner { display: none; }
 
   /* контакты на фоне квеври/виноградника */
-  #contacts { background-image: url('img/contacts-bg.jpg'); }
+  #contacts { background-image: url('img/contacts-bg-v2.jpg'); }
   #contacts .section-head h2 { color: #f6f0e3; }
   #contacts .section-head p { color: rgba(246,240,227,.88); }
   #contacts .contact-card { background: rgba(246,240,227,.92); }
+
+  /* продукт на фоне этикеток Плиовержус */
+  #product { background-image: url('img/product-labels.jpg'); }
+  #product .section-head h2 { color: #f6f0e3; }
+  #product .section-head p { color: rgba(246,240,227,.88); }
+  #product .about-text h3 { color: #f6f0e3; }
+  #product .about-text p { color: rgba(246,240,227,.85); }
+  #product .about-text li { color: rgba(246,240,227,.85); }
+  #product .ratio-box { background: rgba(25,19,16,.45); border-color: rgba(255,255,255,.3); }
+  #product .ratio-box .r { color: var(--gold-light); }
+  #product .ratio-box .d { color: rgba(246,240,227,.85); }
+  #product .fact { background: rgba(25,19,16,.4); border-color: rgba(255,255,255,.25); }
+  #product .fact .n { color: var(--gold-light); }
+  #product .fact .t { color: rgba(246,240,227,.8); }
 </style>
 </head>
 <body>
@@ -243,7 +257,7 @@
 </header>
 
 <!-- PRODUCT -->
-<section id="product">
+<section id="product" class="bg-section">
   <div class="container">
     <div class="section-head">
       <div class="kicker">О продукте</div>

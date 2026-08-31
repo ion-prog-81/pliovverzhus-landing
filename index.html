@@ -220,6 +220,14 @@
   #product .fact { background: rgba(25,19,16,.4); border-color: rgba(255,255,255,.25); }
   #product .fact .n { color: var(--gold-light); }
   #product .fact .t { color: rgba(246,240,227,.8); }
+
+  /* компактные варианты внутри «О продукте» */
+  .variants-compact { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 60px; }
+  @media (max-width: 820px) { .variants-compact { grid-template-columns: 1fr; } }
+  .variant-item { border: 1px solid rgba(255,255,255,.3); border-radius: 12px; padding: 26px 28px; background: rgba(25,19,16,.45); backdrop-filter: blur(3px); }
+  .variant-item .v-kind { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light); }
+  .variant-item h3 { font-size: 22px; font-weight: 600; color: #f6f0e3; margin: 8px 0 10px; }
+  .variant-item p { font-size: 15px; color: rgba(246,240,227,.88); }
 </style>
 </head>
 <body>
@@ -288,29 +296,16 @@
       </div>
     </div>
   
-    <div class="section-head" style="margin-top:70px;">
-      <div class="kicker">Два характера</div>
-      <h2>Красный и белый</h2>
-      <p>Из одного крымского виноградника — два вержуса с разным характером: насыщенный красный и деликатный белый.</p>
-    </div>
-<div class="variants">
-      <div class="variant">
-        <div class="img"><img src="img/label-red.jpg" alt="Этикетка Плиовержус красный"></div>
-        <div class="body">
-          <div class="kind">Красный</div>
-          <h3>Плиовержус из Саперави</h3>
-          <p>100% сок молодого винограда сорта Саперави прямого отжима. Насыщенный, с характером — для мяса, ярких соусов и смелых маринадов.</p>
-          <div class="meta">Состав: сок молодого винограда Саперави, содержит сульфиты</div>
-        </div>
+        <div class="variants-compact">
+      <div class="variant-item">
+        <div class="v-kind">Красный</div>
+        <h3>Плиовержус из Саперави</h3>
+        <p>100% сок молодого винограда сорта Саперави прямого отжима — насыщенный, с характером: для мяса, ярких соусов и смелых маринадов. Содержит сульфиты.</p>
       </div>
-      <div class="variant">
-        <div class="img"><img src="img/label-white.jpg" alt="Этикетка Плиовержус белый"></div>
-        <div class="body">
-          <div class="kind">Белый</div>
-          <h3>Плиовержус из белого винограда</h3>
-          <p>Сок молодого белого винограда — мягкая кислинка для салатов, рыбы, птицы и лёгких заправок.</p>
-          <div class="meta">Без сахара · без алкоголя · натуральный вкус</div>
-        </div>
+      <div class="variant-item">
+        <div class="v-kind">Белый</div>
+        <h3>Плиовержус из белого винограда</h3>
+        <p>Сок молодого белого винограда — мягкая кислинка для салатов, рыбы, птицы и лёгких заправок. Без сахара, без алкоголя, натуральный вкус.</p>
       </div>
     </div>
   </div>

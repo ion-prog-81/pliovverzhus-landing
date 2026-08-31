@@ -167,6 +167,39 @@
   .producer-banner { width: 100%; border-radius: 14px; margin-bottom: 44px; display: block; box-shadow: 0 18px 50px rgba(58,47,38,.18); }
   .producer-photo { width: 100%; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 14px 40px rgba(58,47,38,.15); display: block; }
   .recipe-photo { width: calc(100% + 60px); margin: -28px -30px 22px; height: 200px; object-fit: cover; display: block; border-radius: 12px 12px 0 0; }
+
+  /* ---------- BACKGROUND SECTIONS ---------- */
+  .bg-section { position: relative; background-size: cover; background-position: center; }
+  .bg-section::after { content: ""; position: absolute; inset: 0; background: rgba(25,19,16,.62); }
+  .bg-section > .container { position: relative; z-index: 1; }
+
+  /* hero на фоне виноградника */
+  .hero { background-image: url('img/winery/vineyard1.jpg'); padding: 110px 0 90px; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(25,19,16,.55) 0%, rgba(25,19,16,.45) 50%, rgba(25,19,16,.72) 100%); }
+  .hero .container { position: relative; z-index: 1; }
+  .hero .kicker { color: var(--gold-light); }
+  .hero h1 { color: #f6f0e3; text-shadow: 0 3px 24px rgba(0,0,0,.35); }
+  .hero .subtitle { color: rgba(246,240,227,.92); }
+  .hero .uses { color: rgba(246,240,227,.85); }
+  .hero .uses b { color: var(--gold-light); }
+  .badge { background: rgba(255,255,255,.12); color: #f6f0e3; border-color: rgba(255,255,255,.35); backdrop-filter: blur(4px); }
+  .btn-ghost { border-color: #f6f0e3; color: #f6f0e3; }
+  .btn-ghost:hover { background: rgba(246,240,227,.12); }
+  .hero-img { display: none; }
+
+  /* производитель на фоне террасы */
+  #producer { background-image: url('img/winery/winery-terrace.jpg'); }
+  #producer .section-head h2 { color: #f6f0e3; }
+  #producer .section-head p { color: rgba(246,240,227,.85); }
+  #producer h3 { color: #f6f0e3; }
+  #producer .sub { color: var(--gold-light); }
+  #producer p { color: rgba(246,240,227,.88); }
+  #producer .cred { background: rgba(255,255,255,.1); color: #f6f0e3; border-color: rgba(255,255,255,.3); }
+  #producer .link { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+  #producer .fact { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.25); backdrop-filter: blur(3px); }
+  #producer .fact .n { color: var(--gold-light); }
+  #producer .fact .t { color: rgba(246,240,227,.8); }
+  .producer-banner { display: none; }
 </style>
 </head>
 <body>
@@ -184,7 +217,7 @@
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero bg-section">
   <div class="container">
     <div class="kicker">Винодельня Плиогория · Крым</div>
     <h1>ПЛИ<span class="drop">О</span>ВЕРЖУС</h1>
@@ -269,13 +302,12 @@
 </section>
 
 <!-- PRODUCER -->
-<section id="producer">
+<section id="producer" class="bg-section">
   <div class="container">
     <div class="section-head">
       <div class="kicker">Производитель</div>
       <h2>Винодельня «Плиогория»</h2>
     </div>
-    <img class="producer-banner" src="img/winery/winery-terrace.jpg" alt="Дегустационная терраса винодельни Плиогория">
     <div class="producer">
       <div>
         <h3>Семейная винодельня в Предгорном Крыму</h3>

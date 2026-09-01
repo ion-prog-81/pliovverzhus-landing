@@ -227,7 +227,14 @@
   #contacts .contact-card { background: rgba(246,240,227,.92); }
 
   /* продукт на фоне этикеток Плиовержус */
-  #product { background-image: url('img/product-bottles.jpg'); }
+  #product {
+    background-image: url('img/product-bottles.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(246,240,227,.4);
+  }
+  #product::after { background: linear-gradient(180deg, rgba(25,19,16,.5) 0%, rgba(25,19,16,.28) 45%, rgba(25,19,16,.45) 100%); }
   #product .section-head h2 { color: #f6f0e3; }
   #product .section-head p { color: rgba(246,240,227,.88); }
   #product .about-text h3 { color: #f6f0e3; }

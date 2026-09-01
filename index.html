@@ -48,7 +48,26 @@
   .nav-links { display: flex; gap: 26px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; }
   .nav-links a { color: var(--ink-soft); text-decoration: none; }
   .nav-links a:hover { color: var(--wine); }
-  @media (max-width: 640px) { .nav-links { display: none; } }
+  .nav-burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 6px;
+  }
+  .nav-burger span { display: block; width: 26px; height: 2px; background: var(--ink); border-radius: 2px; transition: all .25s; }
+  @media (max-width: 768px) {
+    .nav-burger { display: flex; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: rgba(246,240,227,.98); border-bottom: 1px solid var(--line);
+      box-shadow: 0 16px 30px rgba(58,47,38,.12); padding: 8px 24px 14px;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .nav-links a:last-child { border-bottom: none; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
 
   /* ---------- HERO ---------- */
   .hero { text-align: center; padding: 90px 0 70px; position: relative; overflow: hidden; }
@@ -228,6 +247,23 @@
   .variant-item .v-kind { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light); }
   .variant-item h3 { font-size: 22px; font-weight: 600; color: #f6f0e3; margin: 8px 0 10px; }
   .variant-item p { font-size: 15px; color: rgba(246,240,227,.88); }
+
+  /* ---------- MOBILE FINE-TUNING ---------- */
+  @media (max-width: 768px) {
+    .hero { padding: 64px 0 48px; }
+    .hero h1 { font-size: clamp(40px, 13vw, 64px); }
+    .hero .badges { gap: 8px; }
+    .badge { padding: 7px 14px; font-size: 12px; }
+    .hero .uses { font-size: 13px; letter-spacing: .1em; }
+    .section-head h2 { font-size: 30px; }
+    .facts { grid-template-columns: 1fr; gap: 10px; }
+    .fact { padding: 12px 14px; }
+    .about-grid { gap: 32px; }
+    section { padding: 56px 0; }
+    .recipe-photo { height: 160px; }
+    .contacts .cards { gap: 14px; }
+    footer { padding: 26px 0 34px; }
+  }
 </style>
 </head>
 <body>
@@ -235,6 +271,9 @@
 <nav>
   <div class="container">
     <div class="nav-brand">ПЛИ<span>О</span>ВЕРЖУС</div>
+    <button class="nav-burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-links">
       <a href="#product">О продукте</a>
       <a href="#producer">Производитель</a>
@@ -483,5 +522,19 @@
   </div>
 </footer>
 
+<script>
+  const burger = document.querySelector('.nav-burger');
+  const links = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', burger.classList.contains('open'));
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    links.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+</script>
 </body>
 </html>
